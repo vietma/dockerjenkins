@@ -1,10 +1,12 @@
 build:
 	@docker build -t jenkins-master jenkins-master/.
-stop:
-	@docker stop jenkins-master
-clean: stop
-	@docker rm jenkins-master
 
-clean-images:
+stop:
+	@docker stop $$(docker ps -aq)
+
+clean-containers: stop
+	@docker rm $$(docker ps -aq)
+
+clean-images: clean-containers
 	@docker rmi $$(docker images -q)
 
