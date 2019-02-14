@@ -2,7 +2,7 @@ build:
 	@docker build -t jenkins-master jenkins-master/.
 
 stop:
-	@docker kill $$(docker ps -q)
+	@docker stop $$(docker ps -a)
 
 clean-containers: stop
 	@docker rm $$(docker ps -aq)
