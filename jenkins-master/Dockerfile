@@ -28,7 +28,7 @@ ENV JENKINS_OPTS="--logfile=/var/log/jenkins/jenkins.log  --webroot=/var/cache/j
 
 # Skip setup wizard
 #ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
-ENV jenkins.install.runSetupWizard=false
+
 
 # Prep Jenkins Directories
 RUN mkdir /var/log/jenkins
@@ -40,5 +40,5 @@ RUN chown -R jenkins:jenkins /var/cache/jenkins
 EXPOSE 8080
 EXPOSE 50000
 
-ENTRYPOINT [ "java", "-Djenkins.install.runSetupWizard=false", "-jar", "/usr/share/jenkins/jenkins.war" ]
+ENTRYPOINT [ "java", "-jar", "/usr/share/jenkins/jenkins.war" ]
 
