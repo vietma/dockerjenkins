@@ -36,5 +36,5 @@ RUN chown -R jenkins:jenkins /var/cache/jenkins
 EXPOSE 8080
 EXPOSE 50000
 
-
+ENTRYPOINT [ "java", "-jar", "/usr/share/jenkins/jenkins.war" ]
 
