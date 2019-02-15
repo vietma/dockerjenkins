@@ -26,6 +26,9 @@ RUN curl -fL http://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/$
 ENV JAVA_OPTS="-Xmx8192m"
 ENV JENKINS_OPTS="--logfile=/var/log/jenkins/jenkins.log  --webroot=/var/cache/jenkins/war"
 
+# Skip setup wizard
+ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+
 # Prep Jenkins Directories
 RUN mkdir /var/log/jenkins
 RUN mkdir /var/cache/jenkins
