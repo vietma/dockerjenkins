@@ -28,6 +28,8 @@ ENV JENKINS_OPTS="--logfile=/var/log/jenkins/jenkins.log  --webroot=/var/cache/j
 
 # Skip setup wizard
 #ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+# run this command
+# $java -jar -Djenkins.install.runSetupWizard=false jenkins.war
 
 
 # Prep Jenkins Directories
